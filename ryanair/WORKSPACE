@@ -17,15 +17,17 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [
+        "org.checkerframework:checker-qual:3.10.0",
+        "org.codehaus.mojo:animal-sniffer-annotations:1.19",
         "io.vertx:vertx-stack-depchain:4.0.3",
         "io.vertx:vertx-web:4.0.3",
+        "io.vertx:vertx-core:4.0.3",
         "io.vertx:vertx-web-client:4.0.3",
         "io.vertx:vertx-rx-java2:4.0.3",
         "io.vertx:vertx-junit5:4.0.3",
         "org.junit.jupiter:junit-jupiter:5.7.0",
     ],
     repositories = [
-        "https://maven-central-eu.storage-download.googleapis.com/maven2",
         "https://maven.google.com",
         "https://repo1.maven.org/maven2",
         "https://packages.confluent.io/maven/",

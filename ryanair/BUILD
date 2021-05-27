@@ -17,7 +17,10 @@ java_library(
     name = "java_test_deps",
     exports = [
         "@maven//:io_vertx_vertx_stack_depchain",
+        "@maven//:org_checkerframework_checker_qual",
+        "@maven//:org_codehaus_mojo_animal_sniffer_annotations",
         "@maven//:io_vertx_vertx_web",
+        "@maven//:io_vertx_vertx_core",
         "@maven//:io_vertx_vertx_web_client",
         "@maven//:io_vertx_vertx_rx_java2",
         "@maven//:io_vertx_vertx_junit5",
