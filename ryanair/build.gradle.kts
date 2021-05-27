@@ -18,6 +18,7 @@ val vertxVersion = "4.0.3"
 val junitJupiterVersion = "5.7.0"
 
 val mainVerticleName = "com.example.ryanair.MainVerticle"
+val mainClassName = "com.example.ryanair.Main"
 val launcherClassName = "io.vertx.core.Launcher"
 
 val watchForChange = "src/**/*"
@@ -42,11 +43,16 @@ java {
 }
 
 tasks.withType<ShadowJar> {
-  archiveClassifier.set("fat")
   manifest {
-    attributes(mapOf("Main-Verticle" to mainVerticleName))
+    attributes(mapOf("Main-Class" to mainClassName))
   }
   mergeServiceFiles()
+}
+
+tasks.withType<Jar> {
+  manifest {
+    attributes(mapOf("Main-Class" to mainClassName))
+  }
 }
 
 tasks.withType<Test> {
